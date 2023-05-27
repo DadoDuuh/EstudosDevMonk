@@ -3,21 +3,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        DateTime horarioEncontro = DateTime.Parse(Console.ReadLine()).ToUniversalTime(); //2023-01-01T10:00:00Z
-        int tempoPessoa1 = Convert.ToInt32(Console.ReadLine());              //-3 
-        int fhPessoa1 = Convert.ToInt32(Console.ReadLine());                 //1 
-        int tempoPessoa2 = Convert.ToInt32(Console.ReadLine());              //-2
-        int fhPessoa2 = Convert.ToInt32(Console.ReadLine());                 //2
+        Console.WriteLine("Insira o Número Um");
+        double numeroEnviado1 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Insira o Número Dois");
+        double numeroEnviado2 = Convert.ToDouble(Console.ReadLine());
 
-        int calcPessoa1 = (fhPessoa1 - (tempoPessoa1));
-        DateTime saidaPessoa1 = new DateTime(horarioEncontro.Ticks);
-        saidaPessoa1 = saidaPessoa1.AddHours(-calcPessoa1);
-
-        int calcPessoa2 = (fhPessoa2 - (tempoPessoa2));
-        DateTime saidaPessoa2 = new DateTime(horarioEncontro.Ticks);
-        saidaPessoa2 = saidaPessoa2.AddHours(-calcPessoa2);
-
-        Console.WriteLine("A primeira pessoa deve sair em " + saidaPessoa1.ToString("yyyy-MM-dd HH:mm:ss").Replace("T", " ").Substring(0, 19));
-        Console.WriteLine("A segunda pessoa deve sair em " + saidaPessoa2.ToString("yyyy-MM-dd HH:mm:ss").Replace("T", " ").Substring(0, 19));
+        double x = Somar(numeroEnviado1, numeroEnviado2);
+        Console.WriteLine(x);
     }
+
+    public static double Somar(double num1, double num2)
+    {
+        double result = num1 + num2;
+        return result;
+    }
+
 }
